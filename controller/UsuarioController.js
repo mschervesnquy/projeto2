@@ -18,8 +18,17 @@ function adicionar(req, res) {
   });
 }
 
-function listar(req, res) {}
-function filtro(req, res) {}
+function listar(req, res) {
+  Usuario.find({}).then(function (usuarios) {
+    res.render("usuario/listar.ejs", { Usuarios: usuarios });
+  });
+}
+function filtro(req, res) {
+  var pesquisa = req.body.pesquisa;
+  Usuario.find({ nome: new RegExp(pesquisa, "i") }).then(function (usuarios) {
+    res.render("usuario/listar.ejs", { Usuarios: usuarios });
+  });
+}
 
 function abreeditar(req, res) {}
 function editar(req, res) {}

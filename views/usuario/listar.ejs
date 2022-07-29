@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar</title>
+</head>
+<body>
+    <form method="post">
+        <input type="text" class="pesquisa" name="pesquisa" placeholder="Digite o nome que deseja pesquisar.">
+        <input type="submit" value="Pesquisar">
+    </form>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Foto</th>
+        </tr>
+        <% Usuarios.forEach(function (usuario) { %>
+        <tr>
+            <td><%=usuario._id%></td>
+            <td><%=usuario.nome%></td>
+            <td><%=usuario.email%></td>
+            <td><img src="/fotos/<%=usuario.foto%>" alt="Foto do usuário"></td>
+        </tr>
+        <% }) %>
+    </table>
+</body>
+</html>
