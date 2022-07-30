@@ -10,8 +10,8 @@ router.post("/adicionar", upload.single("foto"), UsuarioController.adicionar);
 router.get("/listar", UsuarioController.listar);
 router.post("/listar", UsuarioController.filtro);
 
-router.get("/editar", UsuarioController.abreeditar);
-router.post("/editar", upload.single("foto"), UsuarioController.editar);
+router.get("/editar/:id", UsuarioController.abreeditar);
+router.post("/editar/:id", upload.single("foto"), UsuarioController.editar);
 
 router.get("/deletar", UsuarioController.deletar);
 

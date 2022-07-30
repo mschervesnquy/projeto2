@@ -30,8 +30,29 @@ function filtro(req, res) {
   });
 }
 
-function abreeditar(req, res) {}
-function editar(req, res) {}
+function abreeditar(req, res) {
+  Usuario.findById(req.params.id).then(function (usuario) {
+    res.render("usuario/editar.ejs", { Usuario: usuario });
+  });
+}
+function editar(req, res) {
+  Usuario.findByIdAndUpdate(
+    req.params.id,
+    {
+      nome: req.body.nome,
+      email: req.body.email,
+      senha: req.body.senha,
+      foto: req.file.filename,
+    },
+    function (err, result) {
+      if (err) {
+        res.send("Aconteceu o seguinte errro: " + err);
+      } else {
+        res.redirect("/usuario/listar");
+      }
+    }
+  );
+}
 
 function deletar(req, res) {}
 
