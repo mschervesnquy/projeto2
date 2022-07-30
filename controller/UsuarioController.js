@@ -54,7 +54,11 @@ function editar(req, res) {
   );
 }
 
-function deletar(req, res) {}
+function deletar(req, res) {
+  Usuario.findByIdAndDelete(req.params.id).then(function (valor) {
+    res.redirect("/usuario/listar");
+  });
+}
 
 module.exports = {
   abreadicionar,

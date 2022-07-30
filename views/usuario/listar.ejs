@@ -18,6 +18,7 @@
             <th>Email</th>
             <th>Foto</th>
             <th>Editar</th>
+            <th>Deletar</th>
         </tr>
         <% Usuarios.forEach(function (usuario) { %>
         <tr>
@@ -26,6 +27,7 @@
             <td><%=usuario.email%></td>
             <td><img src="/fotos/<%=usuario.foto%>" alt="Foto do usuário"></td>
             <td><a href="/usuario/editar/<%=usuario._id%>">Editar</a></td>
+            <td><a href="/usuario/deletar/<%=usuario._id%>">Deletar</a></td>
         </tr>
         <% }) %>
     </table>

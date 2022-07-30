@@ -13,6 +13,6 @@ router.post("/listar", UsuarioController.filtro);
 router.get("/editar/:id", UsuarioController.abreeditar);
 router.post("/editar/:id", upload.single("foto"), UsuarioController.editar);
 
-router.get("/deletar", UsuarioController.deletar);
+router.get("/deletar/:id", UsuarioController.deletar);
 
 module.exports = router;
