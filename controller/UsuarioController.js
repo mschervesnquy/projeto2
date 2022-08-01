@@ -13,7 +13,7 @@ function adicionar(req, res) {
     if (err) {
       res.send("Aconteceu o seguinte erro: " + err);
     } else {
-      res.redirect("/usuario/listar");
+      res.redirect("/admin/usuario/listar");
     }
   });
 }
@@ -49,7 +49,7 @@ function editar(req, res) {
       if (err) {
         res.send("Aconteceu o seguinte errro: " + err);
       } else {
-        res.redirect("/usuario/listar");
+        res.redirect("/admin/usuario/listar");
       }
     }
   );
@@ -57,7 +57,7 @@ function editar(req, res) {
 
 function deletar(req, res) {
   Usuario.findByIdAndDelete(req.params.id).then(function (valor) {
-    res.redirect("/usuario/listar");
+    res.redirect("/admin/usuario/listar");
   });
 }
 

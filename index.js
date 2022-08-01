@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const UsuarioRoute = require("./routes/UsuarioRoute");
+const AdminRoute = require("./routes/AdminRoute");
 const passport = require("./config/passport");
 
 var session = require("express-session");
@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
 
-app.use("/usuario", autenticacao, UsuarioRoute);
+app.use("/admin", autenticacao, AdminRoute);
 
 app.get("/", function (req, res) {
   res.render("login/login.ejs");
@@ -35,7 +35,7 @@ app.get("/", function (req, res) {
 app.post(
   "/",
   passport.authenticate("local", {
-    successRedirect: "/usuario/listar",
+    successRedirect: "/admin",
     failureRedirect: "/",
   })
 );

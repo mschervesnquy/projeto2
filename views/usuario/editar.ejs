@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adicionar</title>
+    <title>Projeto 2</title>
 </head>
 <body>
+    Usuário
+    <a href="/admin">Página Inicial</a>
+    <a href="/admin/usuario/adicionar">Adicionar</a>
+    <a href="/admin/usuario/listar">Listar</a>
     <form method="post" enctype="multipart/form-data">
         Id: <input type="text" name="id"
-         value="<%=Usuario._id%>" readonly><br>
+        value="<%=Usuario._id%>" readonly><br>
         Nome: <input type="text" name="nome"
         placeholder="Digite seu nome"
         value="<%=Usuario.nome%>" required><br>
