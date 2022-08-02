@@ -1,5 +1,6 @@
 const express = require("express");
 const AlbumRoute = require("./AlbumRoute");
+const ArtistaRoute = require("./ArtistaRoute");
 const SingleRoute = require("./SingleRoute");
 const UsuarioRoute = require("./UsuarioRoute");
 
@@ -10,6 +11,7 @@ app.get("/", function (req, res) {
 });
 
 app.use("/album", AlbumRoute);
+app.use("/artista", ArtistaRoute);
 app.use("/single", SingleRoute);
 app.use("/usuario", UsuarioRoute);
 
