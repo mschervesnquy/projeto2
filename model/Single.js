@@ -1,0 +1,15 @@
+const conexao = require("../config/database");
+
+const SingleSchema = conexao.Schema({
+  nome: {
+    type: "String",
+  },
+  lancamento: {
+    type: "Date",
+  },
+  foto: {
+    type: "String",
+  },
+});
+
+module.exports = conexao.model("Single", SingleSchema);

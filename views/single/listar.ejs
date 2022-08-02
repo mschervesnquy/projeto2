@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto 2</title>
+</head>
+<body>
+    Single
+    <a href="/admin">Página Inicial</a>
+    <a href="/admin/single/adicionar">Adicionar</a>
+    <a href="/admin/single/listar">Listar</a>
+    <form method="post">
+        <input type="text" class="pesquisa" name="pesquisa" placeholder="Digite o nome do álbum que deseja pesquisar.">
+        <input type="submit" value="Pesquisar">
+    </form>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Data de Lançamento</th>
+            <th>Capa do single</th>
+            <th>Editar</th>
+            <th>Deletar</th>
+        </tr>
+        <% Singles.forEach(function (single) { %>
+        <tr>
+            <td><%=single._id%></td>
+            <td><%=single.nome%></td>
+            <td><%=single.lancamento%></td>
+            <td><img src="/fotos/<%=single.foto%>" alt="Capa do álbum"></td>
+            <td><a href="/admin/single/editar/<%=single._id%>">Editar</a></td>
+            <td><a href="/admin/single/deletar/<%=single._id%>">Deletar</a></td>
+        </tr>
+        <% }) %>
+    </table>
+</body>
+</html>
