@@ -16,7 +16,7 @@ function adicionar(req, res) {
     if (err) {
       res.send("Aconteceu o seguinte erro: " + err);
     } else {
-      for (let i = 0; i < req.body.length; i++) {
+      for (let i = 0; i < req.body.artistas.length; i++) {
         Artista.findById(req.body.artistas[i]).then(function (artista) {
           artista.singles.push(result._id);
           artista.save();

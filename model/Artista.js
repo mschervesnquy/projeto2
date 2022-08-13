@@ -10,6 +10,12 @@ const ArtistaSchema = conexao.Schema({
   foto: {
     type: "String",
   },
+  albuns: [
+    {
+      type: conexao.Schema.Types.ObjectId,
+      ref: "Album",
+    },
+  ],
   singles: [
     {
       type: conexao.Schema.Types.ObjectId,

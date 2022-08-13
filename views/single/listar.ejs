@@ -31,9 +31,9 @@
             <td><%=single.nome%></td>
             <td><%=single.lancamento%></td>
             <td>
-                <%single.artistas.forEach(function (artista) {%>
-                <%=artista.nome%>
-                <%})%>
+                <% single.artistas.forEach(function (artista) { %>
+                <%=artista.nome%><br>
+                <% }) %>
             </td>
             <td><img src="/fotos/<%=single.foto%>" alt="Capa do álbum"></td>
             <td><a href="/admin/single/editar/<%=single._id%>">Editar</a></td>
