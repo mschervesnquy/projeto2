@@ -21,6 +21,8 @@
             <th>Nome</th>
             <th>Data de Nascimento</th>
             <th>Foto</th>
+            <th>Álbum</th>
+            <th>Single</th>
             <th>Editar</th>
             <th>Deletar</th>
         </tr>
@@ -30,6 +32,16 @@
             <td><%=artista.nome%></td>
             <td><%=artista.nascimento%></td>
             <td><img src="/fotos/<%=artista.foto%>" alt="Capa do álbum"></td>
+            <td>
+                <% artista.albuns.forEach(function (album) { %>
+                <%=album.nome%><br>
+                <% }) %>
+            </td>
+            <td>
+                <% artista.singles.forEach(function (single) { %>
+                <%=single.nome%><br>
+                <% }) %>
+            </td>
             <td><a href="/admin/artista/editar/<%=artista._id%>">Editar</a></td>
             <td><a href="/admin/artista/deletar/<%=artista._id%>">Deletar</a></td>
         </tr>

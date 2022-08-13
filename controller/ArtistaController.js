@@ -18,9 +18,13 @@ function adicionar(req, res) {
 }
 
 function listar(req, res) {
-  Artista.find({}).then(function (artistas) {
-    res.render("artista/listar.ejs", { Artistas: artistas, Login: req.user });
-  });
+  Artista.find({})
+    .populate("albuns")
+    .populate("singles")
+    .then(function (artistas) {
+      console.log(artistas);
+      res.render("artista/listar.ejs", { Artistas: artistas, Login: req.user });
+    });
 }
 function filtro(req, res) {
   var pesquisa = req.body.pesquisa;

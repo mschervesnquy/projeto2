@@ -25,7 +25,7 @@ app.use(passport.authenticate("session"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/admin", autenticacao, AdminRoute);
+app.use("/admin", /*autenticacao,*/ AdminRoute);
 
 app.get("/", function (req, res) {
   res.render("login/login.ejs");

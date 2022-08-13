@@ -22,11 +22,6 @@
         value="<%=Single.lancamento%>" required><br>
         Capa do Single: <input type="file" name="foto"
         accept="image/*" required><br>
-        Artistas: <select name="artistas" multiple required>
-            <% Artistas.forEach(function (artista) { %>
-            <option value="<%=artista._id%>"><%=artista.nome%></option>
-            <% }) %>
-        </select><br>
         <input type="submit" value="Salvar">
     </form>    
 </body>
