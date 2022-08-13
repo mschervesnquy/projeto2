@@ -18,6 +18,11 @@
         placeholder="Digite a data de lançamento" required><br>
         Capa do Single: <input type="file" name="foto"
         accept="image/*" required><br>
+        Artistas: <select name="artistas" multiple>
+            <%Artistas.forEach(function (artista) {%>
+            <option value="<%=artista._id%>"><%=artista.nome%></option>
+            <%})%>
+        </select>
         <input type="submit" value="Salvar">
     </form>    
 </body>

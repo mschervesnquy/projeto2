@@ -18,7 +18,6 @@ function adicionar(req, res) {
 }
 
 function listar(req, res) {
-  console.log(req.user);
   Artista.find({}).then(function (artistas) {
     res.render("artista/listar.ejs", { Artistas: artistas, Login: req.user });
   });

@@ -20,6 +20,7 @@
             <th>ID</th>
             <th>Nome</th>
             <th>Data de Lançamento</th>
+            <th>Artistas</th>
             <th>Capa do single</th>
             <th>Editar</th>
             <th>Deletar</th>
@@ -29,6 +30,11 @@
             <td><%=single._id%></td>
             <td><%=single.nome%></td>
             <td><%=single.lancamento%></td>
+            <td>
+                <%single.artistas.forEach(function (artista) {%>
+                <%=artista.nome%>
+                <%})%>
+            </td>
             <td><img src="/fotos/<%=single.foto%>" alt="Capa do álbum"></td>
             <td><a href="/admin/single/editar/<%=single._id%>">Editar</a></td>
             <td><a href="/admin/single/deletar/<%=single._id%>">Deletar</a></td>

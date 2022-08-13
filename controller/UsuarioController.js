@@ -19,7 +19,6 @@ function adicionar(req, res) {
 }
 
 function listar(req, res) {
-  console.log(req.user);
   Usuario.find({}).then(function (usuarios) {
     res.render("usuario/listar.ejs", { Usuarios: usuarios, Login: req.user });
   });

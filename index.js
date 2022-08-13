@@ -18,13 +18,12 @@ app.use(
   })
 );
 
+app.set("view engine", "ejs");
+
 app.use(passport.authenticate("session"));
 
 app.use(express.static(path.join(__dirname, "public")));
-
 app.use(express.urlencoded({ extended: true }));
-
-app.set("view engine", "ejs");
 
 app.use("/admin", autenticacao, AdminRoute);
 

@@ -19,7 +19,6 @@ function adicionar(req, res) {
 }
 
 function listar(req, res) {
-  console.log(req.user);
   Album.find({}).then(function (albuns) {
     res.render("album/listar.ejs", { Albuns: albuns, Login: req.user });
   });

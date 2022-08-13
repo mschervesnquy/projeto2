@@ -10,6 +10,12 @@ const ArtistaSchema = conexao.Schema({
   foto: {
     type: "String",
   },
+  singles: [
+    {
+      type: conexao.Schema.Types.ObjectId,
+      ref: "Single",
+    },
+  ],
 });
 
 module.exports = conexao.model("Artista", ArtistaSchema);
