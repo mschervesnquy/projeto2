@@ -22,7 +22,6 @@ function listar(req, res) {
     .populate("albuns")
     .populate("singles")
     .then(function (artistas) {
-      console.log(artistas);
       res.render("artista/listar.ejs", { Artistas: artistas, Login: req.user });
     });
 }

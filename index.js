@@ -1,6 +1,8 @@
 const express = require("express");
 const path = require("path");
 const AdminRoute = require("./routes/AdminRoute");
+const UsuarioSAController = require("./controller/UsuarioASController");
+const upload = require("./config/upload");
 const passport = require("./config/passport");
 
 var session = require("express-session");
@@ -25,7 +27,10 @@ app.use(passport.authenticate("session"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/admin", /*autenticacao,*/ AdminRoute);
+app.use("/admin", autenticacao, AdminRoute);
+
+app.get("/cadastrar", UsuarioSAController.abreadicionar);
+app.post("/cadastrar", upload.single("foto"), UsuarioSAController.adicionar);
 
 app.get("/", function (req, res) {
   res.render("login/login.ejs");
