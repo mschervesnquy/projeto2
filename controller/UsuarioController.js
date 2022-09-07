@@ -6,6 +6,7 @@ function abreadicionar(req, res) {
 function adicionar(req, res) {
   var usuario = new Usuario();
   usuario.nome = req.body.nome;
+  usuario.username = req.body.username;
   usuario.email = req.body.email;
   usuario.senha = req.body.senha;
   usuario.foto = req.file.filename;
@@ -40,6 +41,7 @@ function editar(req, res) {
     req.params.id,
     {
       nome: req.body.nome,
+      username: req.body.username,
       email: req.body.email,
       senha: req.body.senha,
       foto: req.file.filename,

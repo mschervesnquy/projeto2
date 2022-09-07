@@ -6,6 +6,7 @@ function abreadicionar(req, res) {
 function adicionar(req, res) {
   var usuario = new Usuario();
   usuario.nome = req.body.nome;
+  usuario.username = req.body.username;
   usuario.email = req.body.email;
   usuario.senha = req.body.senha;
   usuario.foto = req.file.filename;
@@ -13,7 +14,7 @@ function adicionar(req, res) {
     if (err) {
       res.send("Aconteceu o seguinte erro: " + err);
     } else {
-      res.redirect("/");
+      res.redirect("/login");
     }
   });
 }

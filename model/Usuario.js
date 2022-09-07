@@ -4,6 +4,9 @@ const UsuarioSchema = conexao.Schema({
   nome: {
     type: "String",
   },
+  username: {
+    type: "String",
+  },
   email: {
     type: "String",
   },

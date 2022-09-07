@@ -29,9 +29,10 @@ passport.serializeUser(function (user, cb) {
   process.nextTick(function () {
     cb(null, {
       id: user._id,
+      nome: user.nome,
+      username: user.username,
       email: user.email,
       foto: user.foto,
-      nome: user.nome,
     });
   });
 });
